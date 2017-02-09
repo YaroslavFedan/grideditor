@@ -1,0 +1,116 @@
+<div class="modal fade" id="modalConfig" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">Section settings</h4>
+      </div>
+      <div class="modal-body">
+        <div id="editor-css">
+           
+            <form role="form" id="cssForm" class="tab-content">
+               
+                <div class="style row">
+                    <div class="layout col-sm-6">
+                        <div class="margin">
+                            <label>Margin</label>
+                            <input name="margin-top" type="text" placeholder="-" value="">
+                            <input name="margin-bottom" type="text" placeholder="-" value="">
+                            <input name="margin-left" type="text" placeholder="-" value="">
+                            <input name="margin-right" type="text" placeholder="-" value="">
+                            <div class="border">
+                                <label>Border</label>
+                                <input name="border-top" type="text" placeholder="-" value="">
+                                <input name="border-bottom" type="text" placeholder="-" value="">
+                                <input name="border-left" type="text" placeholder="-" value="">
+                                <input name="border-right" type="text" placeholder="-" value="">
+                                <div class="padding">
+                                    <label>Padding</label>
+                                    <input name="padding-top" type="text" placeholder="-" value="">
+                                    <input name="padding-bottom" type="text" placeholder="-" value="">
+                                    <input name="padding-left" type="text" placeholder="-" value="">
+                                    <input name="padding-right" type="text" placeholder="-" value="">
+                                    <div class="content"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings col-sm-6"> 
+                        
+                         <div class="form form-group">
+                              <label>Border color</label>
+                              <input type="text" name="border-color" class="pick-a-color form-control" value="">
+                              <label>Border style</label>
+                              <select name="border-style" class="form-control">
+                                  <option selected="selected" value=""></option>
+                                  <option  value="solid">Solid</option>
+                                  <option value="dotted">Dotted</option>
+                                  <option value="dashed">Dashed</option>
+                                  <option value="none">None</option>
+                                  <option value="hidden">Hidden</option>
+                                  <option value="double">Double</option>
+                                  <option value="groove">Groove</option>
+                                  <option value="ridge">Ridge</option>
+                                  <option value="inset">Inset</option>
+                                  <option value="outset">Outset</option>
+                                  <option value="initial">Initial</option>
+                                  <option value="inherit">Inherit</option>
+                              </select>
+                         </div>
+                         
+                        <div class="form form-group">
+                              <label>Background color</label>
+                              <input type="text" name="background-color" class="pick-a-color form-control" value="">
+                         </div>
+                      
+                         <div class="input-append">
+                            <label>Background image</label><br>
+                            <input hidden="" type="text" name="background-image" value=""> 
+                            <a href="javascript:open_popup('filemanager/dialog.php?type=1&popup=1&field_id=img_bg&lang=ru')" class="btn btn-default glyphicon glyphicon-picture" type="button"></a> <img src="" hidden=""  id="img_bg" alt="" style="max-height:100px; margin-top:20px;">
+                        </div>
+                        
+                        <div class="form form-group">
+                             <select name="background-size" class="form-control" style="margin-top:15px;">
+                                <option  selected="selected"  value=""></option>
+                                <option value="cover">Cover</option>
+                                <option value="contain">Contain</option>
+                                <option value="no-repeat">No Repeat</option>
+                                <option value="repeat">Repeat</option>
+                                <option value="repeat-x">Horizontal repeat bottom</option>
+                           </select>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                </div>
+                
+            </form>
+            
+            
+            
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+        <button type="button" id="saveChanges" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+
+     $(".pick-a-color").pickAColor({
+             allowBlank   : true,
+        });
+      var popup;
+      var bgImg = $('img#img_bg');
+      var inImg = $("input[name='background-image']");
+      function open_popup(url) {
+          popup = window.open(url, '', 'location,status=0, toolbar=0, location=0, menubar=0, width=800,height=600,directories=0, resizable=1, scrollbars=0top=0');
+      }
+      function responsive_filemanager_callback(field_id){ 
+            var url=jQuery('#'+field_id).val();
+            bgImg.attr('src',url).show();
+            inImg.val(url);
+            popup.close();
+      }  
+</script>

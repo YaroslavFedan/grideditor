@@ -1,0 +1,106 @@
+#editor-css .style .layout input {
+    position: absolute;
+    text-align: center;
+    padding: 3px 0;
+    height: 24px;
+    width: 34px;
+    margin: 0;
+    border: 1px solid #bdbdbd;
+    font-size: 11px;
+    line-height: 11px;
+}
+#editor-css .style .layout .margin, #editor-css .style .layout .border, #editor-css .style .layout .padding, #editor-css .style .layout .content {
+    margin: 44px;
+    position: relative;
+    border: 1px solid #bababa;
+}
+#editor-css .style .layout input[name="margin-top"], #editor-css .style .layout input[name="border-top"], #editor-css .style .layout input[name="padding-top"] {
+    top: 11px;
+    left: 50%;
+    margin-left: -17px;
+}
+#editor-css .style .layout input[name="margin-right"], #editor-css .style .layout input[name="border-right"], #editor-css .style .layout input[name="padding-right"] {
+    top: 50%;
+    right: 5px;
+    margin-top: -12px;
+}
+#editor-css .style .layout input[name="margin-bottom"], #editor-css .style .layout input[name="border-bottom"], #editor-css .style .layout input[name="padding-bottom"] {
+    bottom: 11px;
+    left: 50%;
+    margin-left: -17px;
+}
+#editor-css .style .layout input[name="margin-left"], #editor-css .style .layout input[name="border-left"], #editor-css .style .layout input[name="padding-left"] {
+    top: 50%;
+    left: 5px;
+    margin-top: -12px;
+}
+#editor-css .style .layout label {
+    display: inline-block;
+    position: absolute;
+    font-size: 11px;
+    line-height: 9px;
+    top: 6px;
+    left: 5px;
+    color: #2C2C2C;
+    margin: 0;
+    padding: 0;
+}
+#editor-css .style .layout .content {
+    border: none;
+    height: 50px;
+    padding: 0px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 11px;
+    box-sizing: border-box;
+}
+#editor-css  table tr td { text-align: center;}
+#editor-css .style .layout input[name="border-color"]{
+    position: relative;
+    text-align: left;
+    padding: 0;
+    height: 34px;
+    width: 100%;
+}
+#editor-css .bg-image{ height: 100px;}
+#editor-css input[name=background-image]{ margin-top: 12px; margin-bottom: 12px;}
+#editor-css img.fm-img{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:-22px;
+    right:0;
+}
+#editor-css .rm-bg-img{
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    color: #a94442;
+}
+.no-padding{ padding: 0;}
+.no-padding-left{padding-left: 0;}
+
+#images-preview.ui-sortable{
+    margin-top: 10px;
+    min-height: 0 !important;
+}
+#images-preview > div {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    cursor: move;
+}
+#images-preview.ui-sortable .delete{
+    cursor:pointer;
+    position: absolute;
+    top:8px;
+    right:8px;
+    color:#a94442;
+}
+
+
+

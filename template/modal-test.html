@@ -1,0 +1,59 @@
+<style>
+
+</style>
+ <div class="modal fade" id="modalConfig" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">Section settings</h4>
+      </div>
+      <div class="modal-body">
+         
+          <div class="col-xs-12">
+                <form action="">
+                    
+                    <div class="form-group">
+                    <label>Images</label>
+                        <div>
+                            <input class="form-control" name="images" type="text" value="" style="display: none;">
+                        <div>
+                            <a class="direct-input" href="#">Direct input</a>
+                        </div>
+                        <a  id="azexo_open_popup" href="#" class="btn btn-default glyphicon glyphicon-picture" type="button"></a>
+                        <input id="13" hidden="" type="text" name="filemanager">
+                       <div id="images-preview" class="ui-sortable">
+                       </div>
+                    </div>
+                        <p class="help-block">Select images from media library.</p>
+                    </div>
+                    
+                </form>
+          </div>
+          <div class="clearfix"></div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+<!--        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+
+     $( document ).on( "click", '#azexo_open_popup', function(){
+        var url = "/lib/filemanager/dialog.php?type=1&popup=1&lang=ru&field_id=13";
+        window.open(url, '', 'location,status=0, toolbar=0, location=0, menubar=0, width=800,height=600,directories=0, resizable=1, scrollbars=0top=0');
+    });
+    
+    $( "#images-preview" ).sortable();
+    
+    window.responsive_filemanager_callback = function(field_id){
+        var url=jQuery('#'+field_id).val();
+        var preview = $( document ).find('#images-preview');
+        preview.append('<div style="background-image: url('+url+'); width: 100px;height:100px;  position: relative; left: 0px; top: 0px;" > <i class="glyphicon glyphicon-remove delete"></i></div>')
+    }
+    $(document).on('click','.delete', function(){
+        $(this).parent().remove();
+    })
+</script>
